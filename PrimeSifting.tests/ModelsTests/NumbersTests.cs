@@ -11,7 +11,7 @@ namespace PrimeSifting.Tests
     [TestMethod]
     public void NumbersConstructor_CreatesInstanceOfItem_Item()
     {
-      Numbers newNumbers = new Numbers();
+      Numbers newNumbers = new Numbers(5);
       Assert.AreEqual(typeof(Numbers), newNumbers.GetType());
     }
     [TestMethod]
@@ -20,7 +20,7 @@ namespace PrimeSifting.Tests
       int userNumbers = 5;
       Numbers newNumbers = new Numbers(userNumbers);
       int result = newNumbers.UserNumbers;
-      Assert.AreEqual(description, result);
+      Assert.AreEqual(userNumbers, result);
     }
 
   }
