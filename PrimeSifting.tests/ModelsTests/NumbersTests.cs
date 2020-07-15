@@ -6,8 +6,12 @@ using System;
 namespace PrimeSifting.Tests
 {
   [TestClass]
-  public class NumbersTests
+  public class NumbersTests : IDisposable
   {
+    public void Dispose()
+    {
+      Numbers.ClearAll();
+    }
     [TestMethod]
     public void NumbersConstructor_CreatesInstanceOfItem_Item()
     {
@@ -22,6 +26,12 @@ namespace PrimeSifting.Tests
       int result = newNumbers.UserNumbers;
       Assert.AreEqual(userNumbers, result);
     }
-
+    [TestMethod]
+    public void CalculateList_ReturnsList_NumbersList()
+    {
+      List<Numbers> numbersList = new List<Numbers> { };
+      List<Numbers> result = Numbers.CalculateList();
+      CollectionAssert.AreEqual(numbersList, result);
+    }
   }
 }
