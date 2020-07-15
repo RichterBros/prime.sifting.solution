@@ -29,9 +29,20 @@ namespace PrimeSifting.Tests
     [TestMethod]
     public void CalculateList_ReturnsList_NumbersList()
     {
-      List<Numbers> numbersList = new List<Numbers> { };
-      List<Numbers> result = Numbers.CalculateList();
+      List<int> numbersList = new List<int> {5,4,3,2};
+      List<int> result = Numbers.CalculateList(5);
+      
       CollectionAssert.AreEqual(numbersList, result);
+    }
+    [TestMethod]
+
+    public void GetsMultiples_ReturnInstances_NumbersList()
+    {
+      List<int> numbersList = new List<int> {7,5,3,2};
+      List<int> result = Numbers.CalculateList(10);
+      List<int> output = Numbers.GetsMultiples(result);
+
+      CollectionAssert.AreEqual (numbersList, output);
     }
   }
 }
